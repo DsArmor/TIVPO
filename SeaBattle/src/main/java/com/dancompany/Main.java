@@ -1,7 +1,5 @@
 package main.java.com.dancompany;
 
-import main.java.com.dancompany.Base;
-
 import java.util.Scanner;
 
 public class Main {

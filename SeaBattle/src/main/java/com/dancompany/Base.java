@@ -1,4 +1,4 @@
-package com.dancompany;
+package main.java.com.dancompany;
 
 import java.util.ArrayList;
 import java.util.Arrays;
