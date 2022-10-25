@@ -1,8 +1,7 @@
-package com.dancompany;
+package main.java.com.dancompany;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Random;
+import main.java.com.dancompany.Base;
+
 import java.util.Scanner;
 
 public class Main {
