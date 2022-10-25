@@ -7,22 +7,9 @@ import java.util.Scanner;
 
 public class Main {
 
-    static ArrayList<String> bd;
-
-    public static void main(String[] args) {
+    public static void game(char [] letterMas, String gameWord) {
         Scanner in = new Scanner(System.in);
-        System.out.println("Welcome to the game");
-        bd = new ArrayList(Arrays.asList("france", "glasses", "mandalor", "gamepad", "headphones", "remedy", "tower"));
-        String gameWord = bd.get(new Random().nextInt(bd.size()));
-        char[] letterMas = new char[gameWord.length()];
-        System.out.println("Your word contains " + gameWord.length() + " letters");
         while (!String.valueOf(letterMas).equals(gameWord)) {
-            for (char l : letterMas){
-                if (l != 0)
-                    System.out.print(l + "|");
-                else
-                    System.out.print("_|");
-            }
             System.out.println();
             System.out.println("Input letter");
             char c = in.next().charAt(0);
@@ -30,6 +17,15 @@ public class Main {
                 if (gameWord.charAt(i) == c)
                     letterMas[i] = c;
         }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Welcome to the game");
+        Base base = new Base();
+        String gameWord = base.getWord();
+        char [] letterMas = base.getCharFinder(gameWord);
+        System.out.println("Your word contains " + gameWord.length() + " letters");
+        game(letterMas, gameWord);
         System.out.println("Congratulations");
     }
 }
