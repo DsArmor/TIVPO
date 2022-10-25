@@ -7,10 +7,20 @@ import java.util.Scanner;
 
 public class Main {
 
+    public static void outputLetters(char [] letterMas) {
+        for (char l : letterMas){
+            if (l != 0)
+                System.out.print(l + "|");
+            else
+                System.out.print("_|");
+        }
+        System.out.println();
+    }
+
     public static void game(char [] letterMas, String gameWord) {
         Scanner in = new Scanner(System.in);
         while (!String.valueOf(letterMas).equals(gameWord)) {
-            System.out.println();
+            outputLetters(letterMas);
             System.out.println("Input letter");
             char c = in.next().charAt(0);
             for (int i = 0; i < gameWord.length(); i++)
@@ -26,6 +36,6 @@ public class Main {
         char [] letterMas = base.getCharFinder(gameWord);
         System.out.println("Your word contains " + gameWord.length() + " letters");
         game(letterMas, gameWord);
-        System.out.println("Congratulations");
+        System.out.println("Congratulations: " + gameWord);
     }
 }
