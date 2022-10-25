@@ -23,6 +23,8 @@ public class Main {
                     System.out.println(l + "|");
                 else
                     System.out.println("_|");
+
+
             }
             System.out.println("Input letter");
             char c = in.next().charAt(0);
