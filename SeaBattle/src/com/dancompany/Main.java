@@ -15,20 +15,20 @@ public class Main {
         bd = new ArrayList(Arrays.asList("франция", "очки", "мандалорец", "геймпад", "наушники", "лекарство", "колонна"));
         String gameWord = bd.get(new Random().nextInt(bd.size()));
         char[] letterMas = new char[gameWord.length()];
-        String currentWord = "";
         System.out.println("Your word contains" + gameWord.length() + "letters");
-        while (!currentWord.equals(gameWord)) {
+        while (!String.valueOf(letterMas).equals(gameWord)) {
             for (char l : letterMas){
                 if (l == 0)
-                    System.out.println(l + "|");
+                    System.out.print(l + "|");
                 else
-                    System.out.println("_|");
-
-
+                    System.out.print("_|");
             }
             System.out.println("Input letter");
             char c = in.next().charAt(0);
-            currentWord += "";
+            int i = gameWord.indexOf(c);
+            if (i != -1)
+                letterMas[i] = c;
         }
+        System.out.println("Congratulations");
     }
 }
